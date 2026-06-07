@@ -1,0 +1,8 @@
+node_modules/
+50446028_appkey.txt
+50446028_secretkey.txt
+telegram_token.txt
+telegram_chatid.txt
+telegram_channel.txt
+output.txt
+*.txt
