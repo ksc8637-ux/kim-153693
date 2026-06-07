@@ -6,3 +6,5 @@ telegram_chatid.txt
 telegram_channel.txt
 output.txt
 *.txt
+bot.js
+*.py
