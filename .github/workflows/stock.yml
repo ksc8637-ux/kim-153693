@@ -1,25 +1,25 @@
-name: Stock Scanner 
-on: 
-  schedule: 
-    - cron: '40 22 * * 1-5' 
-    - cron: '50 23 * * 1-5' 
-    - cron: '30 5 * * 1-5' 
-    - cron: '50 5 * * 1-5' 
-  workflow_dispatch: 
-jobs: 
-  scan: 
-    runs-on: ubuntu-latest 
-    steps: 
-      - uses: actions/checkout@v3 
-      - uses: actions/setup-node@v3 
-        with: 
-          node-version: '20' 
-      - run: npm install 
-      - name: Run scanner 
-        env: 
-          APPKEY: ${{ secrets.APPKEY }} 
-          SECRETKEY: ${{ secrets.SECRETKEY }} 
-          BOT_TOKEN: ${{ secrets.BOT_TOKEN }} 
-          CHAT_ID: ${{ secrets.CHAT_ID }} 
-          CHANNEL_ID: ${{ secrets.CHANNEL_ID }} 
+name: Stock Scanner
+on:
+  schedule:
+    - cron: '40 22 * * 1-5'
+    - cron: '50 23 * * 1-5'
+    - cron: '30 5 * * 1-5'
+    - cron: '50 5 * * 1-5'
+  workflow_dispatch:
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+      - run: npm install
+      - name: Run scanner
+        env:
+          APPKEY: ${{ secrets.APPKEY }}
+          SECRETKEY: ${{ secrets.SECRETKEY }}
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
+          CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
         run: node daiangju_actions.cjs
