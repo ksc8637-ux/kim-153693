@@ -6,6 +6,7 @@
     "@anthropic-ai/sdk": "^0.100.1",
     "axios": "^1.17.0",
     "cheerio": "^1.2.0",
-    "node-cron": "^3.0.3"
+    "node-cron": "^3.0.3",
+    "node-fetch": "^3.3.2"
   }
 }
