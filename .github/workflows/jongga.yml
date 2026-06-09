@@ -1,0 +1,21 @@
+name: Jongga Scanner
+on:
+  schedule:
+    - cron: '0 6 * * 1-5'
+  workflow_dispatch:
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+      - run: npm install
+      - name: Run jongga
+        env:
+          APPKEY: ${{ secrets.APPKEY }}
+          SECRETKEY: ${{ secrets.SECRETKEY }}
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
+        run: node jongga_actions.cjs
