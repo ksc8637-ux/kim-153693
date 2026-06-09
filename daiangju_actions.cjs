@@ -2,7 +2,6 @@ const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch
 
 const BOT_TOKEN = process.env.BOT_TOKEN;
 const CHAT_ID = process.env.CHAT_ID;
-const CHANNEL_ID = process.env.CHANNEL_ID;
 const APPKEY = process.env.APPKEY;
 const SECRETKEY = process.env.SECRETKEY;
 
@@ -76,7 +75,6 @@ async function main() {
     message += '🔴 철칙\n✅ 미수 절대 금지\n⚡ 오늘 못 잡으면 내일 또 온다';
 
     await sendTelegram(CHAT_ID, message);
-    await sendTelegram(CHANNEL_ID, message);
     console.log('발송 완료!');
 
   } catch (err) {
